@@ -57,3 +57,5 @@ model.eval()
 model.to('cpu')
 y_pred = model(torch.tensor(normilized_data).to(torch.float32))
 ```
+## Результат исследования моделей с подбором наилучших гиперпараметров
+![Мое изображение]("Диаграмма_метрки.png")
