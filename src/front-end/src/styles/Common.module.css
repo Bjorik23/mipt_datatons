@@ -1,0 +1,66 @@
+.header{
+    display: block;
+    width: 98%;
+    height: 4em;
+    font-size: 1.1em;
+    background-color: #edf4fb;
+    margin: 0;
+    margin-bottom: 2em;
+    padding: 10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+
+}
+
+.button{
+    display: inline-block;
+    border: none;
+    width: 120px;
+    height: 90px;
+    font-size: 0.8em;
+    background-color: #edf4fb;
+    margin-top: 8px;
+    margin-right: 20px;
+}
+.sendButton{
+    display: block;
+    border: none;
+    width: 120px;
+    height: 40px;
+    font-size: 0.8em;
+    background-color: #666;
+    margin-top: 8px;
+    margin-right: 20px;
+}
+.window{
+    display: grid;
+    grid-template-columns: 20% 55%;
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    margin: 0px
+  }
+  
+.inputwindow{
+    margin-top: 0;
+    display: block;
+    grid-template-rows: auto;
+    grid-column: 1;
+    grid-row: 2
+}
+
+.menuButton{
+    background-color: #aaa;
+}
+.modeWindow{
+    grid-column: 2;
+    grid-template-rows: 50px auto;
+}
+
+.menu{
+    grid-row: 1;
+    grid-column: 1;
+}
+  
+.predictMode{
+    grid-row: 1;
+    grid-column: 2;
+}

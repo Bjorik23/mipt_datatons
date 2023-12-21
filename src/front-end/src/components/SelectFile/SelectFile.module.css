@@ -1,0 +1,21 @@
+.csvReader {
+    margin: 20px;
+    display: 'flex';
+    margin-bottom: 10,
+} 
+.browseFile {
+    width: '20%',
+}
+.acceptedFile {
+    border: 0.5px solid lightblue;
+    height: 45;
+    line-height: 2.5em;
+    padding-left: 10;
+    width: '80%',
+}
+.upload{
+    padding: 0 20px
+} 
+.progressBarBackgroundColor {
+    background-color: #edf4fb;
+} 
