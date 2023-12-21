@@ -9,7 +9,7 @@
 ```
 import pickle
 
-#загружаем scaler для номрализации входных данных
+#загружаем scaler для нормализации входных данных
 with open('scaler.pkl', 'rb') as file:
     scaler = pickle.load(file)
 
@@ -40,7 +40,7 @@ with open(r'models\boosting_model.pkl', 'rb') as file:
 #нейронная сеть
 model = torch.load('models\nn.pt')
 ```
-## Номрализация данных
+## Нормализация данных
 ```
 normilized_data = scaler.transform(input)
 ```
@@ -58,7 +58,7 @@ model.to('cpu')
 y_pred = model(torch.tensor(normilized_data).to(torch.float32))
 ```
 ## Результат исследования моделей с подбором наилучших гиперпараметров
-![Мое изображение](Диаграмма_метрки.png)
+![Мое изображение](Диаграмма метркии R2 и потерь MAE.png)
 
 ## Вывод
 Наилучший результат показал алгоритм SVR с метрикой R2 около 0.96. За ним идёт алгоритм KNN и градиентный бустинг.
