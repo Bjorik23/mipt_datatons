@@ -1,15 +1,3 @@
-FROM python:3.9
-
-WORKDIR /backend
- 
-COPY web-api/requirements.txt /backend
-RUN pip install -r requirements.txt
-
-COPY web-api /backend
-
-EXPOSE 5000
-CMD ["python", "server.py"]
-
 FROM node:lts as dependencies
 WORKDIR /front-end
 COPY front-end/package.json front-end/package-lock.json ./

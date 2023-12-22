@@ -1,7 +1,5 @@
 import { InputMode } from '@/enums/modes';
 import { addedHeaders, addedInputs, addedRows, clearInputs, store } from '@/store/state-logic';
-import stylesSheet from '@/styles/Common.module.css'
-import styles from '@/components/SelectFile/SelectFile.module.css'
 import React, { CSSProperties, useState } from 'react';
 import common from '@/styles/Common.module.css'
 import { useCSVReader } from 'react-papaparse';
@@ -51,7 +49,7 @@ export default function CSVReader() {
       setColumns(headers)
       setRows(newRows)
       setTableVisibility(true)
-      allowSend(false)
+      allowSend(true)
       
     }
     const { openFilePicker, filesContent, loading, errors, plainFiles, clear } = useFilePicker({
@@ -89,20 +87,20 @@ export default function CSVReader() {
         }
       });
     let id =0;
-    return val ? <></> : <div className={stylesSheet.inputwindow}>
+    return val ? <></> : <div className={common.inputwindow}>
         <TextField
           id="outlined-number"
           label="File name"
           defaultValue={filName}
           value={filName}
           placeholder="Select file..."
-          className={styles.input}
+          className={common.input}
           InputLabelProps={{
           shrink: true,
         }}
         />
-        <Button className={styles.button} onClick={() => openFilePicker()}>Select files</Button>
-        <Button className={styles.button} disabled={!isSendAllowed} onClick={() => send()}>Send</Button>
+        <Button className={common.sendFileButton} onClick={() => openFilePicker()}>Select files</Button>
+        <Button className={common.sendFileButton} disabled={!isSendAllowed} onClick={() => send()}>Send</Button>
       <br />
       <div hidden={!isTableVisible} style={{ 
         height: 600, 

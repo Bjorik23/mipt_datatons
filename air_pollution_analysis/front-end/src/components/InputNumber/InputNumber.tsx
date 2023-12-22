@@ -1,6 +1,6 @@
 import { FormControl, FormHelperText, InputAdornment, OutlinedInput, TextField } from "@mui/material";
 import { IInputNumberProps } from "./props";
-import styles from '@/styles/InputNumber.module.css'
+import styles from '@/styles/Common.module.css'
 import { useState } from "react";
 
 export function InputNumber(props: IInputNumberProps){
@@ -13,7 +13,6 @@ export function InputNumber(props: IInputNumberProps){
     props.numberUpdated(Number.parseInt(event.target.value))
   };
     return <TextField
-    id="outlined-number"
     label={isModified ? isNaN(number) ? "Must be Filled" :  props.header: ""}
     type="number"
     placeholder={props.header}

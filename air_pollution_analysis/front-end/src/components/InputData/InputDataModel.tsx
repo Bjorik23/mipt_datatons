@@ -1,7 +1,6 @@
 import { Button, Input, TextField } from "@mui/material";
 import { InputNumber } from "../InputNumber/InputNumber";
 import styles from '@/styles/Common.module.css';
-import rowStyles from '@/styles/InputNumber.module.css'
 import { changedAh, changedC6h6, changedHour, changedNmhc, changedNo2, changedNox, changedPt08Nmhc, changedPt08No2, changedPt08Nox, changedPt08O3, changedPt8Co, changedRh, changedT, changedWeekday, resetSingle, store } from "@/store/state-logic";
 import { useEffect, useState } from "react";
 import { InputMode } from "@/enums/modes";
@@ -49,7 +48,6 @@ export function InputDataModel(){
         let model = state['singleModel']
         let alghoritm = state['predictModel']
         let res = await sender.sendRequest(alghoritm, [model])
-        store.dispatch(resetSingle({}))
         setResult({val: res[0], isVisible: true})
         console.log(res)
     }
@@ -79,12 +77,11 @@ export function InputDataModel(){
         size="large" 
         onClick={sendData} className={styles.sendButton}>Send</Button>
         { result.isVisible ?  <TextField
-            id="outlined-number"
             label="Result"
             type="number"
             defaultValue={result.val}
             value={result.val}
-            className={rowStyles.inputRow}
+            className={styles.inputRow}
             InputLabelProps={{
             shrink: true,
         }}/> : null}

@@ -1,6 +1,6 @@
 import { FormHelperText, MenuItem, Select, SelectChangeEvent, TextField } from "@mui/material";
 import React from "react";
-import styles from '@/styles/InputNumber.module.css'
+import styles from '@/styles/Common.module.css'
 import { ISelectorProps } from "./props";
 
 export function Selector(props: ISelectorProps){
@@ -10,7 +10,6 @@ export function Selector(props: ISelectorProps){
         props.onChanged(Number.parseInt(event.target.value))
     };
     return <TextField
-          id="outlined-select-currency"
           select
           label={props.header}
           defaultValue={0}

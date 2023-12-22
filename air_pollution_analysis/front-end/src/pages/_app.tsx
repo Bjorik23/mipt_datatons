@@ -1,3 +1,4 @@
+import '@/styles/globals.css'
 import { Header } from '@/components/common/Header'
 import type { AppProps } from 'next/app'
 
