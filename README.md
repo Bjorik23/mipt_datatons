@@ -1,64 +1,20 @@
-## Формат входных данных
-Входные данные представляют собой массив из 14 чисел, где каждое число это признак, расположенный в следующем порядке:
-**'Month', 'Weekday', 'Hour', 'PT08.S1(CO)', 'C6H6(GT)', 'PT08.S2(NMHC)', 'NOx(GT)', 'PT08.S3(NOx)', 'NO2(GT)', 'PT08.S4(NO2)', 'PT08.S5(O3)', 'T', 'RH', 'AH'** <br>
-Признак Month это числа от 1 до 12, признак Weekday это числа от 0 до 6
+# Мы от дяди Баира - Команда Data Science
 
+Добро пожаловать в репозитарий команды Data Science "Мы от дяди Баира"! Мы - группа энтузиастов, увлеченных анализом данных и машинным обучением, стремящихся вносить значительный вклад в науку о данных.
 
-## Код для загрузки моделей:
+## Проекты
 
-```
-import pickle
+Ниже представлена таблица наших проектов с описанием и ссылками на них:
 
-#загружаем scaler для номрализации входных данных
-with open('scaler.pkl', 'rb') as file:
-    scaler = pickle.load(file)
+| № | Наименование проекта|Сферы деятельности|Навыки и инструменты|Задачи проекта|Ключевые слова проекта|
+|:-:|:-:|:-:|:-:|:-:|:-:|
+| 1 |[Создание модели на основе данных о качестве воздуха](https://github.com/Bjorik23/mipt_datatons/tree/main/air_pollution_analysis)|`Экология` `Охрана окружающей среды`|`Python` `Pandas` `Numpy` `Seaborn` `Plotly` `Sklearn` `Pickle` `Torch`|Разработка модели машинного обучения для анализа данных о качестве воздуха|предобработка, анализ, временные ряды, регрессия, предсказания|
 
-#модель линейной регрессии
-with open('models\linear_model.pkl', 'rb') as file:
-    model = pickle.load(file)
+## Как начать
 
-#модель Лассо регрессии
-with open('models\lasso_model.pkl', 'rb') as file:
-    model = pickle.load(file)
+1. Клонируйте репозиторий: `git clone [ссылка на репозиторий]`.
+2. Установите необходимые зависимости: `pip install -r requirements.txt`.
 
-#модель случайного леса
-with open('models\forest_model.pkl', 'rb') as file:
-    model = pickle.load(file)
+---
 
-#модель K-ближайших соседей
-with open('models\knn_model.pkl', 'rb') as file:
-    model = pickle.load(file)
-
-#модель Support Vector Regressor
-with open('models\svr_model.pkl', 'rb') as file:
-    model = pickle.load(file)
-
-#модель бустинга
-with open(r'models\boosting_model.pkl', 'rb') as file:
-    model = pickle.load(file)
-
-#нейронная сеть
-model = torch.load('models\nn.pt')
-```
-## Номрализация данных
-```
-normilized_data = scaler.transform(input)
-```
-
-## Использование модели для предсказания
-Для всех моделей, кроме нейронной сети:
-```
-y_pred = model.predict(normilized_data)
-```
-
-Для нейронной сети
-```
-model.eval()
-model.to('cpu')
-y_pred = model(torch.tensor(normilized_data).to(torch.float32))
-```
-## Результат исследования моделей с подбором наилучших гиперпараметров
-![Мое изображение](Диаграмма_метрки.png)
-
-## Вывод
-Наилучший результат показал алгоритм SVR с метрикой R2 около 0.96. За ним идёт алгоритм KNN и градиентный бустинг.
+© 2023 Команда Data Science "Мы от дяди Баира"
