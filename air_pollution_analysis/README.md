@@ -86,6 +86,6 @@ S. De Vito, E. Massera, M. Piga, L. Martinotto, G. Di Francia, On field calibrat
 
 - **Karina Akchurina** [GitHub](https://github.com/Karina1605)
 - **Elena Almaeva** [GitHub](https://github.com/Cu-hedgehog)
-- **Bair Vambuev** [GitHub](https://github.com/Bjorik23)
 - **Mikhail Kuzmenkov** [GitHub](https://github.com/MikhailKuzm)
 - **Olga Redchenko** [GitHub](https://github.com/OlgaRedchenko)
+- **Bair Vambuev** [GitHub](https://github.com/Bjorik23)
