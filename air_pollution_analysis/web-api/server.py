@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_cors import CORS
 from sklearn.ensemble import RandomForestRegressor
 from models_loader import load_models, load_paths
 from flask import request
@@ -6,6 +7,7 @@ import fields as fs
 import pandas as pd
 
 app = Flask(__name__)
+CORS(app, origins='*')
 
 paths = load_paths()
 models = load_models(paths)
