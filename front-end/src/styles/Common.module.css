@@ -1,0 +1,128 @@
+.header{
+    display: block;
+    width: 98%;
+    height: 4em;
+    font-size: 1.1em;
+    background-color: #666666;
+    margin: 0;
+    margin-bottom: 2em;
+    padding: 10px;
+    color: #FFF;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+
+}
+
+.button{
+    display: inline-block;
+    border: none;
+    width: 120px;
+    height: 60px;
+    font-size: 0.8em;
+    background-color: #555555;
+    margin-top: 8px;
+    padding: 10px;
+    margin-right: 20px;
+    color: #FFF;
+    border-radius: 5px !important;
+}
+
+.button:hover{
+    display: inline-block;
+    border: none;
+    width: 120px;
+    height: 60px;
+    font-size: 0.8em;
+    background-color: #444444;
+    margin-top: 8px;
+    margin-right: 20px;
+    color: #FFF;
+}
+.clicked{
+    display: inline-block;
+    border: none;
+    width: 120px;
+    height: 60px;
+    font-size: 0.8em;
+    background-color: #888 !important;
+    margin-top: 8px;
+    margin-right: 20px;
+    color: #FFF !important;
+    border-radius: 5px !important;
+}
+.sendButton{
+    display: block;
+    border: none;
+    width: 120px;
+    height: 40px;
+    font-size: 0.8em;
+    background-color: #666;
+    margin-top: 8px;
+    margin-right: 20px;
+}
+
+.sendButton:disabled{
+    display: block;
+    border: none;
+    width: 120px;
+    height: 40px;
+    font-size: 0.8em;
+    background-color: #AAA;
+    margin-top: 8px;
+    margin-right: 20px;
+    color: #CCC;
+}
+
+.sendButton:hover{
+    display: block;
+    border: none;
+    width: 120px;
+    height: 40px;
+    font-size: 0.8em;
+    background-color: #555;
+    margin-top: 8px;
+    margin-right: 20px;
+}
+
+.window{
+    display: grid;
+    grid-template-columns: 20% 75%;
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    margin: 0px
+  }
+  
+.inputwindow{
+    margin-top: 0;
+    display: block;
+    grid-template-rows: auto;
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    color: #fff;
+}
+
+.menuButton{
+    background-color: #666;
+    color: #fff;
+}
+.menuButton:hover{
+    background-color: #555;
+}
+.menuSelected{
+    background-color : #888 !important;
+    color: #fff;
+}
+.modeWindow{
+    grid-column: 2;
+    grid-template-rows: 50px auto;
+}
+
+.menu{
+    grid-row: 1;
+    grid-column: 1;
+}
+  
+.predictMode{
+    grid-row: 1;
+    grid-column: 2;
+}

@@ -1,0 +1,31 @@
+version: '1.0'
+
+networks:
+  network:
+    driver: bridge
+
+services:
+  server:
+    container_name: server
+    build: 
+      context: .
+      dockerfile: dockerfile-back
+    expose:
+      - 5000
+    ports:
+      - "5000:5000"
+    networks:
+      - network
+
+  client:
+    container_name: client
+    build: 
+      context: .
+      dockerfile: dockerfile-front
+    ports:
+      - "3000:3000"
+    depends_on:
+      - server
+    networks:
+      - network
+    

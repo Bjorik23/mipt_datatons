@@ -1,0 +1,67 @@
+.csvReader {
+    margin: 20px;
+    display: 'flex';
+    margin-bottom: 10,
+} 
+.browseFile {
+    width: '20%',
+}
+.acceptedFile {
+    border: 0.5px solid lightblue;
+    height: 45;
+    line-height: 2.5em;
+    padding-left: 10;
+    width: '80%',
+}
+.upload{
+    padding: 0 20px
+} 
+.progressBarBackgroundColor {
+    background-color: #edf4fb;
+} 
+
+.input{
+    display: inline-flex;
+    max-width: 450px;
+    min-width: 450px;
+    margin-top: 25px;
+    margin-right: 10px;
+}
+
+.button{
+    display: inline-block;
+    border: none;
+    width: 120px;
+    height: 55px;
+    font-size: 0.8em;
+    background-color: #555555;
+    margin-top: 25px;
+    padding: 10px;
+    margin-right: 20px;
+    color: #FFF;
+    border-radius: 5px !important;
+}
+.button:disabled{
+    display: inline-block;
+    border: none;
+    width: 120px;
+    height: 55px;
+    font-size: 0.8em;
+    background-color: #AAA;
+    margin-top: 25px;
+    padding: 10px;
+    margin-right: 20px;
+    color: #CCC;
+    border-radius: 5px !important;
+}
+.button:hover{
+    display: inline-block;
+    border: none;
+    width: 120px;
+    height: 55px;
+    font-size: 0.8em;
+    background-color: #444444;
+    margin-top: 25px;
+    margin-right: 20px;
+    color: #FFF;
+}
