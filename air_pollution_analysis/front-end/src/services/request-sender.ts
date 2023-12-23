@@ -10,12 +10,12 @@ export class RequestSender{
       }
 
     constructor(){
-        if(process.env.URL == undefined){
-            console.warn(process.env)
+        console.error(process.env)
+        if(process.env['NEXT_PUBLIC_REQUEST_URL'] == undefined){
             this.url ="http://127.0.0.1:5000/predict"
         }
         else{
-            this.url = process.env.URL
+            this.url = process.env['NEXT_PUBLIC_REQUEST_URL']
         }
   
     }

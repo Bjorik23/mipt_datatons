@@ -40,9 +40,6 @@ def predict():
     res = models[js['model']].predict(series)
     return list(res)
 
-@app.route('/predict-from-all', methods=['POST'])
-def full_predict():
-    return "Hello, World!"
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=False, port=5000)
+    app.run(host='0.0.0.0', debug=False, port=5001)

@@ -9,5 +9,5 @@ RUN pip install -r requirements.txt
 # в рабочую директорию контейнера
 COPY . /backend
 # Устанавливаем порт, который будет использоваться для сервера
-EXPOSE 5000
+EXPOSE 5001
 CMD ["python", "server.py"]
