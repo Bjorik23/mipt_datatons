@@ -1,17 +1,15 @@
 FROM node:lts as dependencies
 WORKDIR /front-end
-COPY front-end/package.json front-end/package-lock.json ./
+COPY package.json package-lock.json ./
 RUN npm install --frozen-lockfile
 
 FROM node:lts as builder
 WORKDIR /front-end
-COPY front-end .
-COPY --from=dependencies front-end/node_modules ./node_modules
+COPY . .
 RUN npm rum build
 
 FROM node:lts as runner
 WORKDIR /front-end
-ENV NODE_ENV production
 
 COPY --from=builder /front-end/public ./public
 COPY --from=builder /front-end/package.json ./package.json

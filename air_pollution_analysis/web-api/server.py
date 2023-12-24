@@ -5,7 +5,7 @@ from models_loader import load_models, load_paths
 from flask import request
 import fields as fs
 import pandas as pd
-import torch
+#import torch
 
 
 app = Flask(__name__)
