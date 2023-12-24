@@ -29,6 +29,7 @@ export class RequestSender{
         }, {
             headers: this.headers
         })
+        console.log(res.data)
         return res.data;
     }
 }

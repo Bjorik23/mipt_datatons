@@ -48,12 +48,12 @@ export function PredictModelSelector(){
                 selected ={value == PredictModels.linear}>
                     {predictors.Linear}
             </ToggleButton>
-            <ToggleButton 
-                className={value == PredictModels.scaler ? styles.clicked : styles.button}
-                value={PredictModels.scaler } 
-                selected={value == PredictModels.scaler}> 
-                    {predictors.Scaler}
-            </ToggleButton>
+            {/*<ToggleButton 
+                className={value == PredictModels.neural ? styles.clicked : styles.button}
+                value={PredictModels.neural } 
+                selected={value == PredictModels.neural}> 
+                    {predictors.Neural}
+            </ToggleButton>*/}
             <ToggleButton 
                 className={value == PredictModels.svr ? styles.clicked : styles.button}
                 value={PredictModels.svr } 

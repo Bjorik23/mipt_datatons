@@ -4,6 +4,6 @@ export enum PredictModels{
     knn = 'knn',
     lasso = 'lasso',
     linear = 'linear',
-    scaler = 'scaler',
     svr = 'svr',
+    neural = 'neural'
 }

@@ -17,7 +17,7 @@ def load_models(paths: dict) -> dict:
     res['linear'] =  pickle.load(open(paths['linear'], 'rb'))
     res['svr'] = pickle.load(open(paths['svr'], 'rb'))
     res['scaler'] = pickle.load(open(paths['scaler'], 'rb'))
-    res['neural'] = torch.load(paths['neural'], 'rb')
+    #res['neural'] = torch.load(paths['neural'], map_location='cpu')
     return res
 
 def load_paths():
