@@ -34,15 +34,14 @@
 Проект использует следующие библиотеки Python, которые необходимо установить:
 
 ```bash
-pandas
-numpy
-datetime
-matplotlib
-seaborn
-plotly
-scikit-learn
-pickle
-torch
+pandas 2.1.1
+numpy 1.26.0
+matplotlib 3.8.2
+seaborn 0.13.0
+plotly 5.18.0
+scikit-learn 1.2.2
+pickle 3.0.0
+torch 2.1.2
 ```
 
 Установите их, используя pip install или conda install в зависимости от вашего средства управления пакетами.
