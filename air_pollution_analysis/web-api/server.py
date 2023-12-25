@@ -5,6 +5,8 @@ from models_loader import load_models, load_paths
 from flask import request
 import fields as fs
 import pandas as pd
+#import torch
+
 
 app = Flask(__name__)
 CORS(app, origins='*')
@@ -37,12 +39,15 @@ def get_series(data):
 def predict():
     js = request.json
     series = get_series(js['series'])
-    res = models[js['model']].predict(series)
+    transformed_data = models['scaler'].transform(series)
+    #if js['model'] == 'neural':
+    #    #models['neural'].eval()
+    #    models['neural'].to('cpu')
+    #    res = models['neural'](torch.tensor(transformed_data).to(torch.float32))
+    #    return res
+    res = models[js['model']].predict(transformed_data)
     return list(res)
 
-@app.route('/predict-from-all', methods=['POST'])
-def full_predict():
-    return "Hello, World!"
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=False, port=5000)
+    app.run(host='0.0.0.0', debug=False, port=5001)

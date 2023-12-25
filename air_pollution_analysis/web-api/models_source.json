@@ -5,5 +5,6 @@
     "lasso": "models/lasso_model.pkl",
     "linear": "models/linear_model.pkl",
     "scaler" : "models/scaler.pkl",
-    "svr": "models/svr_model.pkl"
+    "svr": "models/svr_model.pkl",
+    "neural": "models/nn.pt"
 }

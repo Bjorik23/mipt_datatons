@@ -8,24 +8,28 @@ services:
   server:
     container_name: server
     build: 
-      context: .
-      dockerfile: dockerfile-back
+      context: ../web-api
+      dockerfile: ../web-api/Dockerfile
     expose:
-      - 5000
+      - 5001
     ports:
-      - "5000:5000"
+      - "5001:5001"
     networks:
       - network
 
   client:
     container_name: client
     build: 
-      context: .
-      dockerfile: dockerfile-front
+      context: ../front-end
+      dockerfile: ../front-end/Dockerfile
     ports:
       - "3000:3000"
     depends_on:
       - server
+    environment:
+      REQUEST_URL: http://127.0.0.1:5001/predict
+    env_file:
+      - ../front-end/.env
     networks:
       - network
     

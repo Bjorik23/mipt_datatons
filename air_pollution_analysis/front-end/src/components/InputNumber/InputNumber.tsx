@@ -8,9 +8,9 @@ export function InputNumber(props: IInputNumberProps){
   const [isModified, setModified] = useState(false)
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
     console.log(event.target)
-    setNumber(Number.parseInt(event.target.value));
+    setNumber(Number.parseFloat(event.target.value));
     setModified(true)
-    props.numberUpdated(Number.parseInt(event.target.value))
+    props.numberUpdated(Number.parseFloat(event.target.value))
   };
     return <TextField
     label={isModified ? isNaN(number) ? "Must be Filled" :  props.header: ""}
