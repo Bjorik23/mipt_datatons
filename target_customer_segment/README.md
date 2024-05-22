@@ -15,19 +15,23 @@
 - behavior_2024.csv - содержит данные с описанием поведения контрагентов ПЭК за 2024 год с января по март включительно.
 
 ## Разделы проекта
-1. **Открытие данных и изучение общей информации**
-2. **Предобработка данных**
-3. **Очистка данных**
-4. **Анализ данных**
-5. **Обучение моделей**
+1. [Изучение и предобработка данных](https://github.com/Bjorik23/mipt_datatons/blob/main/target_customer_segment/preprocessed/preprocessing.ipynb)
+2. [Анализ и преобразование данных для обучения моделей](https://github.com/Bjorik23/mipt_datatons/blob/2aeba62bde0779a5aae4be6eb05c55d1c45453bb/target_customer_segment/feature_selection/select_feature.ipynb)
+3. [Обучение моделей (часть 1)](https://github.com/Bjorik23/mipt_datatons/blob/2aeba62bde0779a5aae4be6eb05c55d1c45453bb/target_customer_segment/ml_boost/ml_boost.ipynb)
 
-## Выводы по анализу данных
+## Выводы по подготовке и анализу данных
 
-...
+Сделано следующее:
+1. Загрузка, подготовка и предобработка данных.
+3. Выполнен исследвательский и статистический анализ данных.
+3. Рассмотрена класстеризация целевых признаков.
+4. Выполнен отбор признаков с использованием информационного критерия Джинни
+5. Созданы эмбендинги признаков
 
 ## Выводы по обучению моделей
 
-...
+1. Обучены модели градиентного бустинга на эмбендингах признаков
+2. Обучены модели градиентного бустинга на отобранных признаках
 
 ## Требования
 
@@ -60,15 +64,15 @@ torch 2.1.2
    ```
 3. Запустите Jupyter Notebooks:
     ```bash
-   air_pollution_analysis/analysis.ipynb
+   target_customer_segment/preprocessed/preprocessing.ipynb
    ```
    ```bash
-   air_pollution_analysis/models.ipynb
+   target_customer_segment/feature_selection/select_feature.ipynb
+   ```
+   ```bash
+   target_customer_segment/ml_boost/ml_boost.ipynb
    ```
 
-## Запуск проекта
-
-...
 
 ## Лицензия
 
@@ -82,9 +86,9 @@ torch 2.1.2
 
 Проект был разработан следующими участниками:
 
-- **Karina Akchurina** [GitHub](https://github.com/Karina1605)
-- **Elena Almaeva** [GitHub](https://github.com/Cu-hedgehog)
-- **Mikhail Kuzmenkov** [GitHub](https://github.com/MikhailKuzm)
-- **Olga Redchenko** [GitHub](https://github.com/OlgaRedchenko)
-- **Bair Vambuev** [GitHub](https://github.com/Bjorik23)
-- **Dmitry Zaitsev** [GitHub](https://github.com/)
+- **Karina Akchurina** [GitHub](https://github.com/Karina1605) `предварительная обработка данных, разведовательный анализ данных`
+- **Elena Almaeva** [GitHub](https://github.com/Cu-hedgehog) `построение моделей машинного обучения с использованием Optuna для подбора параметров (3 модели). Валидация качества модели`
+- **Mikhail Kuzmenkov** [GitHub](https://github.com/MikhailKuzm) `анализ данных, подготовка данных для обучения моделей`
+- **Olga Redchenko** [GitHub](https://github.com/OlgaRedchenko) `исследование в выбранной предметной области, составление плана работы, подготовка к защите проекта`
+- **Bair Vambuev** [GitHub](https://github.com/Bjorik23) `координирование работы команды, создание проекта в репозитории, составление плана работы и подготовка к защите проекта`
+- **Dmitry Zaitsev** [GitHub](https://github.com/) `построение моделей машинного обучения с использованием Optuna для подбора параметров (3 модели). Валидация качества модели`
