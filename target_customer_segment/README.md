@@ -182,6 +182,6 @@ optuna 3.6.1
 - **Karina Akchurina** [GitHub](https://github.com/Karina1605): `предварительная обработка данных, разведовательный анализ данных`
 - **Elena Almaeva** [GitHub](https://github.com/Cu-hedgehog): `построение моделей машинного обучения с использованием Optuna для подбора параметров (6 моделей). Валидация качества модели`
 - **Mikhail Kuzmenkov** [GitHub](https://github.com/MikhailKuzm): `анализ данных, подготовка данных для обучения моделей`
-- **Olga Redchenko** [GitHub](https://github.com/OlgaRedchenko), [Telegram](https://t.me/Bjorik23): `исследование в выбранной предметной области, составление плана работы, подготовка к защите проекта`
-- **Bair Vambuev** [GitHub](https://github.com/Bjorik23): `координирование работы команды, создание проекта в репозитории, составление плана работы и подготовка к защите проекта`
+- **Olga Redchenko** [GitHub](https://github.com/OlgaRedchenko): `исследование в выбранной предметной области, составление плана работы, подготовка к защите проекта`
+- **Bair Vambuev** [GitHub](https://github.com/Bjorik23), [Telegram](https://t.me/Bjorik23): `координирование работы команды, создание проекта в репозитории, составление плана работы и подготовка к защите проекта`
 - **Dmitry Zaitsev** [GitHub](https://github.com/DimaZaytsev): `построение моделей машинного обучения с использованием Optuna для подбора параметров (6 моделей). Валидация качества модели`
