@@ -17,7 +17,7 @@
 ## Разделы проекта
 1. [Изучение и предобработка данных](https://github.com/Bjorik23/mipt_datatons/blob/main/target_customer_segment/preprocessed/preprocessing.ipynb)
 2. [Анализ и преобразование данных для обучения моделей](https://github.com/Bjorik23/mipt_datatons/blob/2aeba62bde0779a5aae4be6eb05c55d1c45453bb/target_customer_segment/feature_selection/select_feature.ipynb)
-3. [Обучение моделей (часть 1)](https://github.com/Bjorik23/mipt_datatons/blob/2aeba62bde0779a5aae4be6eb05c55d1c45453bb/target_customer_segment/ml_boost/ml_boost.ipynb)
+3. [Обучение моделей](https://github.com/Bjorik23/mipt_datatons/blob/2aeba62bde0779a5aae4be6eb05c55d1c45453bb/target_customer_segment/ml_boost/ml_boost.ipynb)
 
 ## Выводы по подготовке и анализу данных
 
