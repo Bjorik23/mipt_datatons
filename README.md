@@ -10,7 +10,8 @@
 |:-:|:-:|:-:|:-:|:-:|:-:|
 | 1 |[Создание модели на основе данных о качестве воздуха](https://github.com/Bjorik23/mipt_datatons/tree/main/air_pollution_analysis)|`Экология` `Охрана окружающей среды`|`Python` `Pandas` `Numpy` `Seaborn` `Plotly` `Sklearn` `Pickle` `Torch`|Разработка модели машинного обучения для анализа данных о качестве воздуха|предобработка, анализ, временные ряды, регрессия, предсказания|
 | 2 |[Определение целевого сегмента клиентов для таргетированной рекламы](https://github.com/Bjorik23/mipt_datatons/tree/main/target_customer_segment)|`Грузоперевозки` `Таргетированная реклама`|`Python` `Pandas` `Numpy` `MatPlotLib` `Sklearn` `Pickle` `Torch` `CatBoost` `LightGBM` `XGBoost`|Определение целевого сегмента клиентов, наиболее эффективного для таргетированной рекламы через email рассылки|предобработка, анализ, рекомендательные системы, предсказания|
+| 3 |[Предсказание количества просмотров рекламы](https://github.com/Bjorik23/mipt_datatons/tree/main/number_of_ad_views)|`Реклама` `Социальные сети`|`Python` `Pandas` `Numpy` `MatPlotLib` `Sklearn` `Pickle` `Torch` `CatBoost` `LightGBM` `XGBoost` `LighAuto ML`|Предсказание количества людей, которые увидят конкретное рекламное объявление в будущем|предобработка, анализ, предсказания|
 
 ---
 
-© 2023 Команда Data Science "Мы от дяди Баира"
+© 2024 Команда Data Science "Мы от дяди Баира"
