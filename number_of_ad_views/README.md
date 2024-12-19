@@ -51,15 +51,7 @@
 
 Задача оценивается по метрике, которая считается значениям из всех трех колонок –`at_least_one`, `at_least_two` и `at_least_three`.
 
-Метрика – Smoothed Mean Log Accuracy Ratio, переведенная в проценты.
-
-$$ 100\% \cdot \left( \exp \left( \frac{1}{n} \sum_{i=1}^{n}\left|\log\left(\frac{ Predicted_i + \epsilon}{Actual_i + \epsilon}\right)\right| \right) - 1 \right) $$
-
-$\epsilon = 0.005$
-
 ![metric formula](metric.png "формула в виде картинки")
-
-EPS = 0.005
 
 Метрика интерпретируется следующим образом: это среднее значение относительного расхождения эталона и предсказанного значения в процентах. 
 
@@ -74,6 +66,187 @@ EPS = 0.005
 - Если ставка объявления `cpm` равна максимальной ставке среди всех остальных участников: объявление со ставкой `cpm` выигрывает с вероятностью в 50%. В реальном аукционе объявление может выигрывать по совершенно другим правилам и вероятностям, это упрощение для моделирования конкретно в данном датасете. 
 - Система запоминает все объявления, который видел пользователь в течении сессии и не показывает их, даже если это самые дорогие объявления в аукционе.  Новая сессия начинается после отсутсвия показов рекламы пользователю в течении 6 часов.
 
+## Разделы проекта
+1. [Изучение и предобработка данных](https://github.com/Bjorik23/mipt_datatons/blob/main/number_of_ad_views/preprocessing/preprocessing.ipynb)
+2. [Анализ и преобразование данных для обучения моделей](https://github.com/Bjorik23/mipt_datatons/blob/main/number_of_ad_views/analysis/analysis.ipynb)
+3. [Feature engineering](https://github.com/Bjorik23/mipt_datatons/blob/main/number_of_ad_views/feature_engeniting/feature_eng.ipynb)
+4. [Обучение моделей ML](https://github.com/Bjorik23/mipt_datatons/blob/main/number_of_ad_views/ml_boosting/ml_boosting.ipynb)
+5. [Обучение моделей DL](https://github.com/Bjorik23/mipt_datatons/blob/main/number_of_ad_views/ml_dl/Models_dl.ipynb)
+
+## Выводы по подготовке и анализу данных
+
+Сделано следующее:
+1. Загрузка, подготовка и предобработка данных
+3. Выполнен исследвательский анализ данных
+3. Проведена сборка датасета для обучения
+4. Выполнен отбор и кодирование признаков 
+
+## Выводы по обучению моделей
+
+1. Обучены модели градиентного бустинга на отобранных признаков
+2. Обучены модели DL бустинга на отобранных признаках
+
+ - 2.1. Результаты обучения моделей регрессии
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>LightGBM</th>
+      <th>CatBoost</th>
+      <th>XGBoost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>MSE</th>
+      <td>6.1325</td>
+      <td>5.9076</td>
+      <td>5.5961</td>
+    </tr>
+    <tr>
+      <th>MAE</th>
+      <td>1.6961</td>
+      <td>1.6619</td>
+      <td>1.6244</td>
+    </tr>
+    <tr>
+      <th>R2-score</th>
+      <td>89.1%</td>
+      <td>89.5%</td>
+      <td>90.1%</td>
+    </tr>
+    <tr>
+      <th>SMLAR</th>
+      <td>42.8%</td>
+      <td>41.8%</td>
+      <td>41.2%</td>
+    </tr>
+    <tr>
+      <th>Time</th>
+      <td>4.64 сек</td>
+      <td>118.78 сек</td>
+      <td>66.94 сек</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+> Все 3 модели показали себя примерно на одном уровне, лучшей является модель XGBoost, она предсказывает количество просмотров рекламы с расхождением на 1.6 единиц; среднее значение относительного расхождения эталона и предсказанного значения в процентах - 41.2 (значение метрики SMLAR).
+
+> В целом можно сделать вывод, что все 3 модели отлично справляются с предсказанием количества просмотров рекламы, о чем нам говорит метрика R2-score > 80%.
+
+
+ - 2.2. Результаты обучения моделей DL
+
+<div id="df-93d6a05e-3a46-4295-9719-a7dba76b2029" class="colab-df-container">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>TFDF</th>
+      <th>LSTM</th>
+      <th>GRU</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>MSE</th>
+      <td>6.7646</td>
+      <td>10.2440</td>
+      <td>9.0867</td>
+    </tr>
+    <tr>
+      <th>MAE</th>
+      <td>1.7761</td>
+      <td>2.0621</td>
+      <td>2.0327</td>
+    </tr>
+    <tr>
+      <th>R2-score</th>
+      <td>87.6%</td>
+      <td>81.4%</td>
+      <td>83.4%</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+  
+
+> DL модели в целом показали хорошие результаты (R² > 80%), однако TFDF значительно превосходит LSTM и GRU.
+> TFDF ближе по качеству к классическим моделям ML (таким как XGBoost), в то время как LSTM и GRU имеют более высокие ошибки предсказаний и требуют дальнейшей оптимизации.
+
+> По итогам данной работы было обучено 6 моделей: 3 на с использованием моделе градиентного бустинга и 3 с использованием DL. Полученные метрики качества позволяют внедрять их в реальные задачи R2-score > 80% 
+
+## Требования
+
+Проект использует следующие библиотеки Python, которые необходимо установить:
+
+```bash
+# Core libraries
+numpy==1.26.4
+pandas==2.2.3
+scikit-learn==1.6.0
+scipy==1.13.1
+matplotlib==3.9.4
+seaborn==0.13.2
+
+# Machine learning libraries
+xgboost==2.1.3
+catboost==1.2.7
+lightgbm==4.5.0
+optuna==4.1.0
+shap==0.46.0
+
+# TensorFlow and Keras for deep learning
+tensorflow==2.13.0
+keras==2.13.0
+tensorflow_decision_forests==1.4.0
+
+# Visualization tools
+plotly==5.24.1
+ydata-profiling==4.6.0
+
+# Utility libraries
+joblib==1.4.2
+tqdm==4.67.1
+python-dateutil==2.9.0.post0
+
+# Optional (useful for development and debugging)
+jupyter==1.0.0
+ipython==8.18.1
+```
+
+Установите их, используя pip install или conda install, в зависимости от вашего средства управления пакетами.
+
+## Установка
+
+Чтобы самостоятельно обучить модели, выполните следующие шаги:
+
+1. Клонирование репозитория:
+   ```bash
+   git clone [https://github.com/Bjorik23/mipt_datatons]
+   ```
+2. Установите необходимые зависимости:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Запустите Jupyter Notebooks:
+    ```bash
+   number_of_ad_views/preprocessing/preprocessing.ipynb
+   ```
+   ```bash
+   number_of_ad_views/analysis/analysis.ipynb
+   ```
+   ```bash
+   number_of_ad_views/feature_engeniting/feature_eng.ipynb
+   ```
+   ```bash
+   number_of_ad_views/ml_boosting/ml_boosting.ipynb
+   ```
+   ```bash
+   number_of_ad_views/ml_dl/Models_dl.ipynb
+   ```
 
 ## Авторы
 
